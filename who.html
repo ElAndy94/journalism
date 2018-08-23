@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+crossorigin="anonymous">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jqcloud2/dist/jqcloud.min.js"></script>
+<link rel="stylesheet" href="bower_components/jqcloud2/dist/jqcloud.min.css">
+<link rel="stylesheet" href="./cssWho.css">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="./home.html">Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-item nav-link" href="./wordmap.html">Locations</a>
+        <a class="nav-item nav-link" href="./timelinev2.html">Timeline</a>
+        <a class="nav-item nav-link" href="./who.html">Names</a>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+  <div id="demo" style="width: 700px; height: 550px; position: relative;"></div>
+</div>
+<script>
+  var words = [
+    {text: "Atmos", weight: 85},
+    {text: "J.Geophys", weight: 77},
+    {text: "OECD", weight: 70},
+    {text: "Grossman", weight: 56},
+    {text: "EPA", weight: 54},
+    {text: "PBL", weight: 49},
+    {text: "Krueger", weight: 45},
+    {text: "Stern", weight: 43},
+    {text: "Selden", weight: 42},
+    {text: "Taylor", weight: 41},
+    /* ... */
+  ];
+
+$("#demo").jQCloud(words);
+
+  setTimeout(function () {
+    var obj = $("#demo").data("jqcloud");
+    var data = obj.word_array;
+    for (var i in data) {
+        $("#" + data[i]["attr"]["id"]).css("color", data[i]["color"]);
+    }
+}, 100);
+</script>
+
