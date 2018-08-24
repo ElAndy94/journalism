@@ -7,7 +7,9 @@
 }
 
 .mid {
-  margin-left: 12.75em;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
 }
 
 .top {
